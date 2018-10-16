@@ -41,7 +41,7 @@ public class PaintActivity extends AppCompatActivity {
 				paintView.blur();
 				return true;
 			case R.id.clear:
-		   //   paintView.clear();
+				//paintView.clear();
 				setContentView(R.layout.activity_paint);
 				//paintView = (PaintView) findViewById(R.id.paintView);
 				DisplayMetrics metrics = new DisplayMetrics();
