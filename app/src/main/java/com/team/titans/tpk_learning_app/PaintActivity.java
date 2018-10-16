@@ -15,11 +15,10 @@ public class PaintActivity extends AppCompatActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_paint);
-//		paintView = (PaintView) findViewById(R.id.paintView);
-//		DisplayMetrics metrics = new DisplayMetrics();
-//		getWindowManager().getDefaultDisplay().getMetrics(metrics);
-//		paintView.init(metrics);
-		//
+		paintView = (PaintView) findViewById(R.id.paintView);
+		DisplayMetrics metrics = new DisplayMetrics();
+		getWindowManager().getDefaultDisplay().getMetrics(metrics);
+		paintView.init(metrics);
 	}
 
 	@Override
