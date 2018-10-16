@@ -19,6 +19,7 @@ public class PaintActivity extends AppCompatActivity {
         DisplayMetrics metrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(metrics);
         paintView.init(metrics);
+        //
     }
 
     @Override
