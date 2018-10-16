@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.widget.CardView;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -27,74 +28,77 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_home);
-		//Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-		//setSupportActionBar(toolbar);
+		Log.d("me","Here2");
 
-//		FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-//		fab.setOnClickListener(new View.OnClickListener() {
-//			@Override
-//			public void onClick(View view) {
-//				Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//						.setAction("Action", null).show();
-//			}
-//		});
+		Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 
-//		DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-//		ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-//				this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-//		drawer.addDrawerListener(toggle);
-//		toggle.syncState();
-//
-//		NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-//		navigationView.setNavigationItemSelectedListener(this);
-//
-//		// Find the View that shows the colors category
-//		vocabulary = findViewById(R.id.CardView_vocabulary);
-//
-//		// Set a click listener on that View
-//		vocabulary.setOnClickListener(new View.OnClickListener() {
-//			// The code in this method will be executed when the colors category is clicked on.
-//			@Override
-//			public void onClick(View view) {
-//				showVocab(view);
-//			}
-//		});
-//
-//		// Find the View that shows the colors category
-//		game = (CardView) findViewById(R.id.CardView_game);
-//
-//		// Set a click listener on that View
-//		game.setOnClickListener(new View.OnClickListener() {
-//			// The code in this method will be executed when the colors category is clicked on.
-//			@Override
-//			public void onClick(View view) {
-//				showGame(view);
-//			}
-//		});
-//
-//		// Find the View that shows the company's website
-//		website = (CardView) findViewById(R.id.CardView_website);
-//
-//		// Set a click listener on that View
-//		website.setOnClickListener(new View.OnClickListener() {
-//			// The code in this method will be executed when the colors category is clicked on.
-//			@Override
-//			public void onClick(View view) {
-//				showWebPage(view);
-//			}
-//		});
-//
-//		// Find the View that shows the about category
-//		about = (CardView) findViewById(R.id.CardView_about);
-//
-//		// Set a click listener on that View
-//		about.setOnClickListener(new View.OnClickListener() {
-//			// The code in this method will be executed when the colors category is clicked on.
-//			@Override
-//			public void onClick(View view) {
-//				showAbout(view);
-//			}
-//		});
+		setSupportActionBar(toolbar);
+
+		FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+		fab.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+						.setAction("Action", null).show();
+			}
+		});
+
+		DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+		ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+				this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+		drawer.addDrawerListener(toggle);
+		toggle.syncState();
+
+		NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+		navigationView.setNavigationItemSelectedListener(this);
+
+		// Find the View that shows the colors category
+		vocabulary = findViewById(R.id.CardView_vocabulary);
+
+		// Set a click listener on that View
+		vocabulary.setOnClickListener(new View.OnClickListener() {
+			// The code in this method will be executed when the colors category is clicked on.
+			@Override
+			public void onClick(View view) {
+				showVocab(view);
+			}
+		});
+
+		// Find the View that shows the colors category
+		game = (CardView) findViewById(R.id.CardView_game);
+
+		// Set a click listener on that View
+		game.setOnClickListener(new View.OnClickListener() {
+			// The code in this method will be executed when the colors category is clicked on.
+			@Override
+			public void onClick(View view) {
+				showGame(view);
+			}
+		});
+
+		// Find the View that shows the company's website
+		website = (CardView) findViewById(R.id.CardView_website);
+
+		// Set a click listener on that View
+		website.setOnClickListener(new View.OnClickListener() {
+			// The code in this method will be executed when the colors category is clicked on.
+			@Override
+			public void onClick(View view) {
+				showWebPage(view);
+			}
+		});
+
+		// Find the View that shows the about category
+		about = (CardView) findViewById(R.id.CardView_about);
+
+		// Set a click listener on that View
+		about.setOnClickListener(new View.OnClickListener() {
+			// The code in this method will be executed when the colors category is clicked on.
+			@Override
+			public void onClick(View view) {
+				showAbout(view);
+			}
+		});
 	}
 
 	@Override
