@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Handler;
+import android.util.Log;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -23,11 +24,14 @@ public class SplashActivity extends AppCompatActivity {
 		DatabaseHelper db = new DatabaseHelper(this);
 		db.populateWords();
 
+		Log.d("me","Here");
+
 		Handler handler = new Handler();
 		handler.postDelayed(new Runnable(){
 			@Override
 			public void run() {
-				/* Create an Intent that will start the Menu-Activity. */
+                Log.d("me","Here1");
+                /* Create an Intent that will start the Menu-Activity. */
 				Intent mainIntent = new Intent(SplashActivity.this, HomeActivity.class);
 				SplashActivity.this.startActivity(mainIntent);
 				SplashActivity.this.finish();
