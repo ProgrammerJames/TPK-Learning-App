@@ -1,69 +1,71 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Tamizh Pallikoodam</string>
-    <string name="title_activity_home">منوی اصلی</string>
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="title_activity_home">मुख्य मेनू</string>
+    <string name="navigation_drawer_open">खुला नेविगेशन ड्रॉवर</string>
+    <string name="navigation_drawer_close">नेविगेशन ड्रॉवर बंद करें</string>
     <string name="nav_header_title">Tamizh Pallikoodam Inc.</string>
     <string name="nav_header_subtitle">www.tamizhpallikoodam.org.au/</string>
-    <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">تنظیمات</string>
+    <string name="nav_header_desc">नेविगेशन हेडर</string>
+    <string name="action_settings">सेटिंग्स</string>
     <!-- Category name for phrases [CHAR LIMIT=20] -->
-    <string name="category_phrases">عبارات</string>
+    <string name="category_phrases">वाक्यांश</string>
 
     <!-- Category name for the vocabulary words for colors [CHAR LIMIT=20] -->
-    <string name="category_colors">رنگ ها</string>
+    <string name="category_colors">रंग की</string>
 
     <!-- Category name for the vocabulary words for numbers [CHAR LIMIT=20] -->
-    <string name="category_numbers">اعداد</string>
+    <string name="category_numbers">नंबर</string>
 
     <!-- Category name for the vocabulary words for family members [CHAR LIMIT=20] -->
-    <string name="category_family">اعضای خانواده</string>
+    <string name="category_family">परिवार के सदस्य</string>
 
     <!-- Category name for the vocabulary words [CHAR LIMIT=20] -->
-    <string name="category_vocabulary">کلمات</string>
+    <string name="category_vocabulary">शब्दावली</string>
 
     <!-- Category name for the about [CHAR LIMIT=20] -->
-    <string name="category_about">درباره اپلیکیشن</string>
+    <string name="category_about">के बारे में</string>
 
     <!-- Category name for the website [CHAR LIMIT=20] -->
-    <string name="category_website">وب سایت</string>
+    <string name="category_website">वेबसाइट</string>
 
     <!-- Category name for the game [CHAR LIMIT=20] -->
-    <string name="category_game">بازی</string>
+    <string name="category_game">खेल</string>
 
     <!-- details for the game [CHAR LIMIT=20] -->
-    <string name="details_game">بازی با کلمات</string>
+    <string name="details_game">शब्द मिलान खेल</string>
 
     <!-- details for the about [CHAR LIMIT=20] -->
-    <string name="details_about">درباره این اپلیکیشن</string>
+    <string name="details_about">इस ऐप के बारे में</string>
 
     <!-- details for the website [CHAR LIMIT=20] -->
-    <string name="details_website">ورود به وب سایت مدرسه</string>
+    <string name="details_website">स्कूल की वेबसाइट पर जाएं</string>
 
     <!-- details for the vocabs [CHAR LIMIT=20] -->
-    <string name="details_vocabualry">آموزش کلمات به زبان تمیل </string>
+    <string name="details_vocabualry">कुछ तामीज़ शब्दों को जानें</string>
 
     <!-- details for the numbers [CHAR LIMIT=20] -->
-    <string name="details_numbers">اعداد و تلفظ آن ها</string>
+    <string name="details_numbers">Tamizh संख्या जानें</string>
 
     <!-- details for the colors [CHAR LIMIT=20] -->
-    <string name="details_colors">رنگ ها و تلفظ آن ها</string>
+    <string name="details_colors">तामीज़ भाषा में रंग</string>
 
     <!-- details for the family members [CHAR LIMIT=20] -->
-    <string name="details_family">اعضای خانواده به زبان تمیل</string>
+    <string name="details_family">तमीज़ में परिवार के सदस्य</string>
 
     <!-- details for the family phrases [CHAR LIMIT=20] -->
-    <string name="details_phrases">عبارات ساده به زبان تمیل</string>
+    <string name="details_phrases">बेसिक तामिज़ वाक्यांश</string>
 
     <!-- http://www.tamizhpallikoodam.org.au/ -->
     <string name="tamizhpallikoodam_website">http://www.tamizhpallikoodam.org.au/</string>
 
     <!-- Slogan for main menu-->
-    <string name="title_gui_menu">Let\'s Learn Tamizh!</string>
+    <string name="title_gui_menu">चलो Tamizh जानें!</string>
+
+    <!-- Slogan for main menu-->
+    <string name="title_activity_question">सवाल</string>
 
     <!-- about app title-->
-    <string name="title_about_app">درباره اپلیکیشن حاضر</string>
+    <string name="title_about_app">तामिज़ पल्लीकुडम ऐप के बारे में</string>
 
     <!-- about app text-->
     <string name="text_about_app">Tamizh Pallikoodam (TPK) is a not for profit school run solely to provide Australians an opportunity to explore and experience the rich Tamil traditions, language, arts and culture. Our Tamil school is a great supporter of the Australian government’s multicultural agenda.
@@ -81,8 +83,9 @@ Make learning the language interesting and fun. The use of specific applications
     </string>
 
     <!-- about app text-->
-    <string name="text_about_app_3">This app has been developed by Digital Bliss team as part of their final assignment for COSC7362 Develop advanced mobile multi-touch applications course of study, RMIT university, 2018</string>
+    <string name="text_about_app_3">This app has been developed by Team Titans as part of their final assignment for COSC7362 Develop advanced mobile multi-touch applications course of study, RMIT university, 2018</string>
 
     <!-- game submit button-->
-    <string name="button_submit">ثبت</string>
+    <string name="button_submit">जमा करें</string>
+
 </resources>
