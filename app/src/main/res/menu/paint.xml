@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
+<<<<<<< HEAD
 	xmlns:app="http://schemas.android.com/apk/res-auto">
 	<item
 		android:id="@+id/normal"
@@ -17,4 +18,32 @@
 		android:id="@+id/clear"
 		android:title="Clear"
 		app:showAsAction="never" />
+=======
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/normal"
+        android:title="Normal"
+        app:showAsAction="never" />
+
+
+    <item
+        android:id="@+id/emboss"
+        android:title="Emboss"
+        app:showAsAction="never" />
+
+
+    <item
+        android:id="@+id/blur"
+        android:title="Blur"
+        app:showAsAction="never" />
+
+
+    <item
+        android:id="@+id/clear"
+        android:title="Clear"
+        app:showAsAction="never" />
+
+
+>>>>>>> f63f67b4afcd2f6b1ada292d43c8425a30e5942a
 </menu>
