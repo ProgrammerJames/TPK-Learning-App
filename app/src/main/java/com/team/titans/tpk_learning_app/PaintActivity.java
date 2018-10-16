@@ -7,14 +7,14 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
-public class MainActivity extends AppCompatActivity {
+public class PaintActivity extends AppCompatActivity {
 
     private PaintView paintView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_paint);
         paintView = (PaintView) findViewById(R.id.paintView);
         DisplayMetrics metrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(metrics);
@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             case R.id.clear:
            //   paintView.clear();
-                setContentView(R.layout.activity_main);
+                setContentView(R.layout.activity_paint);
                 paintView = (PaintView) findViewById(R.id.paintView);
                 DisplayMetrics metrics = new DisplayMetrics();
                 getWindowManager().getDefaultDisplay().getMetrics(metrics);

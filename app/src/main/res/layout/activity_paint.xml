@@ -4,14 +4,13 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.team.titans.tpk_learning_app.MainActivity">
+    tools:context="com.team.titans.tpk_learning_app.PaintActivity">
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        android:src="@drawable/image"
-        />
+        android:src="@drawable/image" />
 
     <com.example.andrew.fingerpaint.PaintView
         android:id="@+id/paintView"
