@@ -8,25 +8,25 @@ import android.widget.Toast;
 
 public class ResultSplashActivity extends AppCompatActivity {
 
-    private final int SPLASH_DISPLAY_LENGTH = 3000;
+	private final int SPLASH_DISPLAY_LENGTH = 1500;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
 
-        Intent myIntent = getIntent();
-        String correct = myIntent.getStringExtra("correct");
+		Intent myIntent = getIntent();
+		String correct = myIntent.getStringExtra("correct");
 
-        Toast.makeText(getApplicationContext(), "Answer: " + correct, Toast.LENGTH_LONG).show();
+		Toast.makeText(getApplicationContext(), "Answer: " + correct, Toast.LENGTH_LONG).show();
 
-        new Handler().postDelayed(new Runnable(){
-            @Override
-            public void run() {
-                /* Create an Intent that will start the Menu-Activity. */
-                Intent mainIntent = new Intent(ResultSplashActivity.this, QuestionActivity.class);
-                ResultSplashActivity.this.startActivity(mainIntent);
-                ResultSplashActivity.this.finish();
-            }
-        }, SPLASH_DISPLAY_LENGTH);
-    }
+		new Handler().postDelayed(new Runnable(){
+			@Override
+			public void run() {
+				/* Create an Intent that will start the Menu-Activity. */
+				Intent mainIntent = new Intent(ResultSplashActivity.this, QuestionActivity.class);
+				ResultSplashActivity.this.startActivity(mainIntent);
+				ResultSplashActivity.this.finish();
+			}
+		}, SPLASH_DISPLAY_LENGTH);
+	}
 }

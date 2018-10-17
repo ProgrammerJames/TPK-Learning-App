@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-	package="com.team.titans.tpk_learning_app">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.team.titans.tpk_learning_app">
+
+	<uses-permission android:name="android.permission.INTERNET"/>
 
 	<application
 		android:allowBackup="true"
@@ -9,35 +10,26 @@
 		android:roundIcon="@mipmap/ic_launcher_round"
 		android:supportsRtl="true"
 		android:theme="@style/AppTheme">
+
 		<activity android:name=".SplashActivity">
 			<intent-filter>
 				<action android:name="android.intent.action.MAIN" />
 				<category android:name="android.intent.category.LAUNCHER" />
 			</intent-filter>
 		</activity>
-		<activity android:name=".PaintActivity"
-			android:theme="@style/AppThemeMenu">
-			<intent-filter>
-				<action android:name="android.intent.action.MAIN" />
-				<category android:name="android.intent.category.LAUNCHER" />
-			</intent-filter>
-		</activity>
-		<activity android:name=".HomeActivity">
-			<intent-filter>
-				<action android:name="android.intent.action.MAIN" />
-				<category android:name="android.intent.category.LAUNCHER" />
-			</intent-filter>
-		</activity>
+		<activity android:name=".PaintActivity" android:theme="@style/AppThemeMenu">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+		<activity android:name=".HomeActivity" />
 		<activity android:name=".QuestionActivity" />
 		<activity android:name=".AboutActivity"/>
 		<activity android:name=".LearnActivity" />
 		<activity android:name=".ResultSplashActivity" />
-		<activity android:name=".VocabularyActivity">
-			<intent-filter>
-				<action android:name="android.intent.action.MAIN" />
-				<category android:name="android.intent.category.LAUNCHER" />
-			</intent-filter>
-		</activity>
+		<activity android:name=".VocabularyActivity" />
+
 	</application>
 
 </manifest>

@@ -12,6 +12,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Handler;
 import android.util.Log;
 
+import org.json.JSONException;
+
 public class SplashActivity extends AppCompatActivity {
 
 	private final int SPLASH_DISPLAY_LENGTH = 3000;
@@ -21,10 +23,12 @@ public class SplashActivity extends AppCompatActivity {
 		super.onCreate(savedInstanceState);
 
 		/* Populate Database */
-		DatabaseHelper db = new DatabaseHelper(this);
-		DatabaseSyncHelper sync = new DatabaseSyncHelper(db);
-
-		//
+		DatabaseSyncHelper db = new DatabaseSyncHelper(this);
+ 		try {
+			db.updateDatabase();
+		} catch (JSONException e) {
+			e.printStackTrace();
+		}
 
 		Handler handler = new Handler();
 		handler.postDelayed(new Runnable(){
