@@ -22,15 +22,14 @@ public class SplashActivity extends AppCompatActivity {
 
 		/* Populate Database */
 		DatabaseHelper db = new DatabaseHelper(this);
-		db.populateWords();
+		DatabaseSyncHelper sync = new DatabaseSyncHelper(db);
 
-		Log.d("me","Here");
+		//
 
 		Handler handler = new Handler();
 		handler.postDelayed(new Runnable(){
 			@Override
 			public void run() {
-                Log.d("me","Here1");
                 /* Create an Intent that will start the Menu-Activity. */
 				Intent mainIntent = new Intent(SplashActivity.this, HomeActivity.class);
 				SplashActivity.this.startActivity(mainIntent);
