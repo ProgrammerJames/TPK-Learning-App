@@ -55,9 +55,6 @@
     <!-- details for the family phrases [CHAR LIMIT=20] -->
     <string name="details_phrases">基本的Tamizh短语</string>
 
-    <!-- http://www.tamizhpallikoodam.org.au/ -->
-    <string name="tamizhpallikoodam_website">http://www.tamizhpallikoodam.org.au/</string>
-
     <!-- Slogan for main menu-->
     <string name="title_gui_menu">让我们学习Tamizh吧!</string>
 
