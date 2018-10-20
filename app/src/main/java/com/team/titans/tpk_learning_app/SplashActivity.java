@@ -11,8 +11,10 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Handler;
 import android.util.Log;
+import android.widget.TextView;
 
 import org.json.JSONException;
+import org.w3c.dom.Text;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -21,14 +23,14 @@ public class SplashActivity extends AppCompatActivity {
 	@Override
 	protected void onCreate(@Nullable Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_splash);
 
 		/* Populate Database */
 		DatabaseSyncHelper db = new DatabaseSyncHelper(this);
- 		try {
-			db.updateDatabase();
-		} catch (JSONException e) {
-			e.printStackTrace();
-		}
+		db.updateDatabase(this);
+
+		//DatabaseHelper db = new DatabaseHelper(this);
+		//db.populateWords();
 
 		Handler handler = new Handler();
 		handler.postDelayed(new Runnable(){

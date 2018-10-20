@@ -165,6 +165,8 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 		} else if (id == R.id.nav_about) {
 			showAbout(about);
 
+		} else if (id == R.id.nav_drawing) {
+			showDrawPage();
 		}
 
 		DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -200,6 +202,15 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
 		// Create a new intent to open the {@link Game}
 		Intent gameIntent = new Intent(HomeActivity.this, QuestionActivity.class);
+
+		// Start the new activity
+		startActivity(gameIntent);
+	}
+
+	public void showDrawPage(){
+
+		// Create a new intent to open the {@link Game}
+		Intent gameIntent = new Intent(HomeActivity.this, PaintActivity.class);
 
 		// Start the new activity
 		startActivity(gameIntent);

@@ -13,6 +13,10 @@
             android:icon="@drawable/game"
             android:title="@string/category_game" />
         <item
+            android:id="@+id/nav_drawing"
+            android:icon="@drawable/website"
+            android:title="@string/category_drawing" />
+        <item
             android:id="@+id/nav_slideshow"
             android:icon="@drawable/website"
             android:title="@string/category_website"

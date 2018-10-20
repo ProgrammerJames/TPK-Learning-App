@@ -1,22 +1,18 @@
 package com.team.titans.tpk_learning_app;
 
+import android.app.Activity;
+import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.util.Log;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.BufferedInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.net.URLConnection;
-
 public class DatabaseSyncHelper extends DatabaseHelper {
+
+	private int lastVersion = -1;
 
 	public DatabaseSyncHelper(Context context) {
 		super(context);
@@ -25,47 +21,53 @@ public class DatabaseSyncHelper extends DatabaseHelper {
 	@Override
 	public void onCreate(SQLiteDatabase db) {
 		super.onCreate(db);
-
-		//Set last version
-		int lastVersion = -1;
 	}
 
-	public void updateDatabase() throws JSONException {
-		SQLiteDatabase db = this.getWritableDatabase();
-
-		//Get last version
-		int lastVersion = -1;
-
+	public void updateDatabase(Activity activity) {
 		//Send word request
-		JSONObject request = new JSONObject();
+		WebRequest request = new WebRequest("http://jupiter.csit.rmit.edu.au/~s3711666/mobile/words.php?version=" + lastVersion + ";");
+		Thread t = new Thread(request);
+		t.start();
+
+		String text = "";
 
 		try {
-			URL url = new URL("http://jupiter.csit.rmit.edu.au/~s3711666/mobile/words.php?version=" + lastVersion + ";");
-			HttpURLConnection connect = (HttpURLConnection) url.openConnection();
-			try {
-				InputStream in = new BufferedInputStream(connect.getInputStream());
-				//readStream(in);
-			} finally {
-				connect.disconnect();
-			}
-		} catch (Exception e) {
+			t.join();
+			text = request.getResponse();
+		} catch (InterruptedException e) { e.printStackTrace(); }
+
+		try {
+			JSONObject response = new JSONObject(text);
+
+			//Set new version
+			lastVersion = response.getInt("version");
+
+			//Add missing words to database
+			updateEntries(activity, response.getJSONArray("words"));
+		} catch (JSONException e) {
 			e.printStackTrace();
 		}
+	}
 
-		Log.d("A", request.toString());
-		//Set new version
-		lastVersion = request.getInt("version");
+	public void updateEntries(Activity activity, JSONArray array) throws JSONException {
+		SQLiteDatabase write = this.getWritableDatabase();
+		for (int i=0; i<array.length(); i++) {
+			JSONObject word = array.getJSONObject(i);
+			ContentValues values = new ContentValues();
 
-		//Add missing words to database
-//		JSONArray words = request.getJSONArray("words");
-//
-//		for (int i=0; i<words.length(); i++) {
-//			JSONObject word = words.getJSONObject(i);
-//
-//			int image = 0;
-//			int audio = 0;
-// 			Word obj = new Word(word.getString("english"), word.getString("tamil"), word.getInt("image"), word.getInt("audio"), word.getString("category"));
-//			this.addWord(word.getInt("id"), obj);
-//		}
+			int id = word.getInt("id");
+			int image = activity.getResources().getIdentifier(word.getString("image"), "drawable", activity.getPackageName());
+			int audio = activity.getResources().getIdentifier(word.getString("audio"), "raw", activity.getPackageName());
+
+			values.put(kID, id);
+			values.put(kEnglish, word.getString("english"));
+			values.put(kTamil, word.getString("tamil"));
+			values.put(kImage, image);
+			values.put(kAudio, audio);
+			values.put(kCategory, word.getString("category"));
+			write.delete(tWords, "id = " + id, null);
+			write.insert(tWords,null, values);
+		}
+		write.close();
 	}
 }

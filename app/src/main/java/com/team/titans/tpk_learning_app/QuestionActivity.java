@@ -14,63 +14,74 @@ import android.media.MediaPlayer;
 
 public class QuestionActivity extends AppCompatActivity {
 
-    private String correct;
+	private int score;
+	private String correct;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_question);
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_question);
 
-        DatabaseHelper db = new DatabaseHelper(this);
+		DatabaseHelper db = new DatabaseHelper(this);
 
-        final Quiz quiz = db.getQuiz();
+		final Quiz quiz = db.getQuiz();
 
-        TextView category = findViewById(R.id.category);
-        category.setText(quiz.getCategory());
+		TextView category = findViewById(R.id.category);
+		category.setText(quiz.getCategory());
 
-        TextView question = findViewById(R.id.question);
-        question.setText(quiz.getTamilTranslation());
+		TextView question = findViewById(R.id.question);
+		question.setText(quiz.getTamilTranslation());
 
-        TextView option1 = findViewById(R.id.option1);
-        option1.setText(quiz.getOption1());
-        TextView option2 = findViewById(R.id.option2);
-        option2.setText(quiz.getOption2());
-        TextView option3 = findViewById(R.id.option3);
-        option3.setText(quiz.getOption3());
-        TextView option4 = findViewById(R.id.option4);
-        option4.setText(quiz.getOption4());
+		TextView option1 = findViewById(R.id.option1);
+		option1.setText(quiz.getOption1());
+		TextView option2 = findViewById(R.id.option2);
+		option2.setText(quiz.getOption2());
+		TextView option3 = findViewById(R.id.option3);
+		option3.setText(quiz.getOption3());
+		TextView option4 = findViewById(R.id.option4);
+		option4.setText(quiz.getOption4());
 
-        final Button submit = findViewById(R.id.submit);
-        submit.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                RadioGroup rg = findViewById(R.id.options);
-                if(rg.getCheckedRadioButtonId() != -1) {
-                    String selectedOption = ((RadioButton)findViewById(rg.getCheckedRadioButtonId())).getText().toString();
-                    if (selectedOption.equals(quiz.getAnswer())) {
-                        correct = "CORRECT";
-                    } else {
-                        correct = "INCORRECT";
-                    }
+		Intent myIntent = getIntent();
+		score = myIntent.getIntExtra("score", 0);
 
-                    // Create a new intent to open the {@link LearnActivity}
-                    Intent resultIntent = new Intent(QuestionActivity.this, ResultSplashActivity.class);
-                    resultIntent.putExtra("correct", correct);
+		final Button submit = findViewById(R.id.submit);
+		submit.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View v) {
+				RadioGroup rg = findViewById(R.id.options);
+				if(rg.getCheckedRadioButtonId() != -1) {
+					String selectedOption = ((RadioButton)findViewById(rg.getCheckedRadioButtonId())).getText().toString();
+					if (selectedOption.equals(quiz.getAnswer())) {
+						correct = "Correct!";
+						score++;
+					} else {
+						correct = "Incorrect";
+					}
 
-                    // Start the new activity
-                    startActivity(resultIntent);
-                }else{
-                    Toast.makeText(getApplicationContext(), "Please make a selection", Toast.LENGTH_LONG).show();
-                }
-            }
-        });
+					// Create a new intent to open the {@link LearnActivity}
+					Intent resultIntent = new Intent(QuestionActivity.this, ResultSplashActivity.class);
+					resultIntent.putExtra("correct", correct);
+					resultIntent.putExtra("score", score);
 
-        final ImageView play =  findViewById(R.id.play);
-        final MediaPlayer mp = MediaPlayer.create(this, quiz.getAudioResourceId());
+					// Start the new activity
+					startActivity(resultIntent);
+				}else{
+					Toast.makeText(getApplicationContext(), "Please make a selection", Toast.LENGTH_LONG).show();
+				}
+			}
+		});
 
-        play.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                mp.start();
-            }
-        });
-    }
+		final ImageView play =  findViewById(R.id.play);
+		final MediaPlayer mp = MediaPlayer.create(this, quiz.getAudioResourceId());
+
+		play.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View v) {
+				mp.start();
+			}
+		});
+	}
+
+	@Override
+	public void onBackPressed() {
+		//Do nothing
+	}
 }

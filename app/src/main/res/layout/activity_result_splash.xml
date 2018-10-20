@@ -1,7 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:orientation="vertical"
+	android:gravity="center_horizontal"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
 
+	<TextView
+		android:id="@+id/textResultCaption"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+        android:paddingTop="36dp"
+		android:text="Result:"
+		android:textAlignment="center"
+		android:textSize="24sp" />
 
-</ConstraintLayout>
+	<TextView
+		android:id="@+id/textResult"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+        android:paddingTop="14dp"
+		android:text="Not Set"
+		android:textAlignment="center"
+		android:textSize="24sp" />
+
+	<TextView
+		android:id="@+id/textScoreCaption"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+        android:paddingTop="36dp"
+		android:text="Score:"
+		android:textAlignment="center"
+		android:textSize="24sp" />
+
+	<TextView
+		android:id="@+id/textScore"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+        android:paddingTop="14dp"
+		android:text="000000"
+		android:textAlignment="center"
+		android:textSize="24sp" />
+</LinearLayout>
