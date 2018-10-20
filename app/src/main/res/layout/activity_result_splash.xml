@@ -11,8 +11,8 @@
 		android:id="@+id/textResultCaption"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-        android:paddingTop="36dp"
-		android:text="Result:"
+		android:paddingTop="48dp"
+		android:text="@string/result"
 		android:textAlignment="center"
 		android:textSize="24sp" />
 
@@ -29,8 +29,8 @@
 		android:id="@+id/textScoreCaption"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-        android:paddingTop="36dp"
-		android:text="Score:"
+		android:paddingTop="36dp"
+		android:text="@string/score"
 		android:textAlignment="center"
 		android:textSize="24sp" />
 

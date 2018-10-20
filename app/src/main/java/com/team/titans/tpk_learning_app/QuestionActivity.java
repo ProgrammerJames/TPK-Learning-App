@@ -26,8 +26,8 @@ public class QuestionActivity extends AppCompatActivity {
 
 		final Quiz quiz = db.getQuiz();
 
-		TextView category = findViewById(R.id.category);
-		category.setText(quiz.getCategory());
+		//TextView category = findViewById(R.id.category);
+		//category.setText(quiz.getCategory());
 
 		TextView question = findViewById(R.id.question);
 		question.setText(quiz.getTamilTranslation());
@@ -67,6 +67,14 @@ public class QuestionActivity extends AppCompatActivity {
 				}else{
 					Toast.makeText(getApplicationContext(), "Please make a selection", Toast.LENGTH_LONG).show();
 				}
+			}
+		});
+
+		final Button back = findViewById(R.id.back);
+		back.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View v) {
+				Intent resultIntent = new Intent(QuestionActivity.this, HomeActivity.class);
+				startActivity(resultIntent);
 			}
 		});
 

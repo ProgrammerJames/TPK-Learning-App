@@ -84,5 +84,9 @@ Haz que aprender el idioma sea interesante y divertido. El uso de aplicaciones e
 
     <!-- game submit button-->
     <string name="button_submit">ENVIAR</string>
+    <string name="button_back">volver al menu</string>
+    <string name="category_drawing">sorteo libre</string>
+    <string name="result">resultado</string>
+    <string name="score">el resultado</string>
 
 </resources>

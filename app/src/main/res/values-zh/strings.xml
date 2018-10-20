@@ -84,5 +84,9 @@ Make learning the language interesting and fun. The use of specific applications
 
     <!-- game submit button-->
     <string name="button_submit">提交</string>
+    <string name="button_back">返回菜单</string>
+    <string name="result">结果</string>
+    <string name="score">得分了</string>
+    <string name="category_drawing">自由抽签</string>
 
 </resources>

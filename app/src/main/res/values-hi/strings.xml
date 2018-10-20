@@ -84,5 +84,9 @@ Make learning the language interesting and fun. The use of specific applications
 
     <!-- game submit button-->
     <string name="button_submit">जमा करें</string>
+    <string name="category_drawing">मुफ्त ड्रा</string>
+    <string name="button_back">वापस मेन्यू पर</string>
+    <string name="result">परिणाम</string>
+    <string name="score">स्कोर</string>
 
 </resources>
