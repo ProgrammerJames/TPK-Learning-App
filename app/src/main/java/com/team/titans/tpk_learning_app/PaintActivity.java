@@ -29,7 +29,7 @@ public class PaintActivity extends AppCompatActivity {
 	}
 
 	@Override
-	public boolean onOptionsItemSelected(MenuItem  item) {
+	public boolean onOptionsItemSelected(MenuItem item) {
 		switch(item.getItemId()) {
 			case R.id.normal:
 				paintView.normal();
@@ -41,12 +41,12 @@ public class PaintActivity extends AppCompatActivity {
 				paintView.blur();
 				return true;
 			case R.id.clear:
-				paintView.clear();
-				//setContentView(R.layout.activity_paint);
-				//paintView = (PaintView) findViewById(R.id.paintView);
-				//DisplayMetrics metrics = new DisplayMetrics();
-				//getWindowManager().getDefaultDisplay().getMetrics(metrics);
-				//paintView.init(metrics);
+				//paintView.clear();
+				setContentView(R.layout.activity_paint);
+				paintView = (PaintView) findViewById(R.id.paintView);
+				DisplayMetrics metrics = new DisplayMetrics();
+				getWindowManager().getDefaultDisplay().getMetrics(metrics);
+				paintView.init(metrics);
 				return true;
 		}
 

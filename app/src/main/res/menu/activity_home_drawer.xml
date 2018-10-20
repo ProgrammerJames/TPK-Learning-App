@@ -30,6 +30,14 @@
                 android:icon="@drawable/website"
                 android:title="@string/category_website" />
             <item
+                android:id="@+id/nav_facebook"
+                android:icon="@drawable/website"
+                android:title="Facebook" />
+            <item
+                android:id="@+id/nav_twitter"
+                android:icon="@drawable/website"
+                android:title="Twitter" />
+            <item
                 android:id="@+id/nav_about"
                 android:icon="@drawable/about"
                 android:title="@string/category_about" />

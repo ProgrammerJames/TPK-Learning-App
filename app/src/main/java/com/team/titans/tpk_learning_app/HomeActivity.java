@@ -22,6 +22,8 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 	CardView vocabulary;
 	CardView game;
 	CardView website;
+	CardView facebook;
+	CardView twitter;
 	CardView about;
 
 	@Override
@@ -152,6 +154,14 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
 			showWebPage(website);
 
+		} else if (id == R.id.nav_facebook) {
+
+			showFacebookPage(facebook);
+
+		} else if (id == R.id.nav_twitter) {
+
+			showTwitterPage(twitter);
+
 		} else if (id == R.id.nav_about) {
 			showAbout(about);
 
@@ -164,7 +174,23 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
 	public void showWebPage(View view) {
 
-		String url = getString(R.string.tamizhpallikoodam_website);
+		String url = "http://www.tamizhpallikoodam.org.au/";
+		Intent i = new Intent(Intent.ACTION_VIEW);
+		i.setData(Uri.parse(url));
+		startActivity(i);
+	}
+
+	public void showFacebookPage(View view) {
+
+		String url = "https://www.facebook.com/Tamizh-Pallikoodam-Inc-227835430628668/timeline/";
+		Intent i = new Intent(Intent.ACTION_VIEW);
+		i.setData(Uri.parse(url));
+		startActivity(i);
+	}
+
+	public void showTwitterPage(View view) {
+
+		String url = "https://twitter.com/tamizhpallioz";
 		Intent i = new Intent(Intent.ACTION_VIEW);
 		i.setData(Uri.parse(url));
 		startActivity(i);
