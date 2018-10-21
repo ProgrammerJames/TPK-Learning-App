@@ -70,14 +70,6 @@ public class QuestionActivity extends AppCompatActivity {
 			}
 		});
 
-		final Button back = findViewById(R.id.back);
-		back.setOnClickListener(new View.OnClickListener() {
-			public void onClick(View v) {
-				Intent resultIntent = new Intent(QuestionActivity.this, HomeActivity.class);
-				startActivity(resultIntent);
-			}
-		});
-
 		final ImageView play =  findViewById(R.id.play);
 		final MediaPlayer mp = MediaPlayer.create(this, quiz.getAudioResourceId());
 
@@ -90,6 +82,7 @@ public class QuestionActivity extends AppCompatActivity {
 
 	@Override
 	public void onBackPressed() {
-		//Do nothing
+		Intent resultIntent = new Intent(QuestionActivity.this, HomeActivity.class);
+		startActivity(resultIntent);
 	}
 }

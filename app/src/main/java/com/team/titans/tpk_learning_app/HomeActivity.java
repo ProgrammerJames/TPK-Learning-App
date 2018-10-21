@@ -210,7 +210,7 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 	public void showDrawPage(){
 
 		// Create a new intent to open the {@link Game}
-		Intent gameIntent = new Intent(HomeActivity.this, PaintActivity.class);
+		Intent gameIntent = new Intent(HomeActivity.this, TraceActivity.class);
 
 		// Start the new activity
 		startActivity(gameIntent);
