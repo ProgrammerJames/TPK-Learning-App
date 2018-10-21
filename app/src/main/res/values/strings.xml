@@ -91,7 +91,8 @@ Make learning the language interesting and fun. The use of specific applications
 	<!-- Score Splash Text -->
 	<string name="result">Result</string>
 	<string name="score">Score</string>
-	<string name="clearScreen">Clear Screen</string>
-	<string name="nextLetter">Next Letter</string>
+	<string name="clearScreen">Clear</string>
+	<string name="nextLetter">Next</string>
+	<string name="prevLetter">Previous</string>
 
 </resources>

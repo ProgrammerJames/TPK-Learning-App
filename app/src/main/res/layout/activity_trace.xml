@@ -15,6 +15,16 @@
 		android:gravity="center_horizontal">
 
 		<Button
+			android:id="@+id/buttonPrev"
+			android:text="@string/prevLetter"
+			android:padding="12dp"
+			android:layout_margin="12dp"
+			android:background="@android:color/holo_purple"
+			android:textColor="@android:color/background_light"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"/>
+
+		<Button
 			android:id="@+id/buttonClear"
 			android:text="@string/clearScreen"
 			android:padding="12dp"
@@ -25,7 +35,7 @@
 			android:layout_height="wrap_content" />
 
 		<Button
-			android:id="@+id/buttonChange"
+			android:id="@+id/buttonNext"
 			android:text="@string/nextLetter"
 			android:padding="12dp"
 			android:layout_margin="12dp"

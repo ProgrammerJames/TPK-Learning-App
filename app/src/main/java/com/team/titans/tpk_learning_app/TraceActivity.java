@@ -1,6 +1,7 @@
 package com.team.titans.tpk_learning_app;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
@@ -26,50 +27,56 @@ public class TraceActivity extends AppCompatActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_trace);
 
 		initialize();
-
-		DisplayMetrics metrics = new DisplayMetrics();
-		getWindowManager().getDefaultDisplay().getMetrics(metrics);
-		paintView.init(metrics);
 	}
 
 	public void initialize() {
+		setContentView(R.layout.activity_trace);
+
 		paintView = (PaintView) findViewById(R.id.paintView);
 		trace = (TextView)findViewById(R.id.textTrace);
 
 		trace.setText(tamilConsonants[tamilIndex]);
 
-		Button change = findViewById(R.id.buttonChange);
-		change.setOnClickListener(new View.OnClickListener() {
-			public void onClick(View v) {
-				change();
-			}
-		});
+		Button prev = findViewById(R.id.buttonPrev);
+		if (tamilIndex == 0) {
+			prev.setEnabled(false);
+			prev.setBackgroundColor(Color.GRAY);
+		} else {
+			prev.setOnClickListener(new View.OnClickListener() {
+				public void onClick(View v) {
+					change(tamilIndex-1);
+				}
+			});
+		}
+
+		Button next = findViewById(R.id.buttonNext);
+		if (tamilIndex == tamilConsonants.length-1) {
+			next.setEnabled(false);
+			next.setBackgroundColor(Color.GRAY);
+		} else {
+			next.setOnClickListener(new View.OnClickListener() {
+				public void onClick(View v) {
+					change(tamilIndex+1);
+				}
+			});
+		}
 
 		Button clear = findViewById(R.id.buttonClear);
 		clear.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
-				clear();
+				initialize();
 			}
 		});
-	}
 
-	public void change() {
-		Random rand = new Random();
-		tamilIndex++;
-		if (tamilIndex >= tamilConsonants.length) {
-			tamilIndex = 0;
-		}
-		clear();
-	}
-
-	public void clear() {
-		setContentView(R.layout.activity_trace);
-		initialize();
 		DisplayMetrics metrics = new DisplayMetrics();
 		getWindowManager().getDefaultDisplay().getMetrics(metrics);
 		paintView.init(metrics);
+	}
+
+	public void change(int val) {
+		tamilIndex = val;
+		initialize();
 	}
 }
