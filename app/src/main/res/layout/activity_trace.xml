@@ -16,7 +16,7 @@
 
 		<Button
 			android:id="@+id/buttonClear"
-			android:text="Clear Screen"
+			android:text="@string/clearScreen"
 			android:padding="12dp"
 			android:layout_margin="12dp"
 			android:background="@android:color/holo_purple"
@@ -26,7 +26,7 @@
 
 		<Button
 			android:id="@+id/buttonChange"
-			android:text="Next Letter"
+			android:text="@string/nextLetter"
 			android:padding="12dp"
 			android:layout_margin="12dp"
 			android:background="@android:color/holo_purple"

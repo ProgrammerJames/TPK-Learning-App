@@ -17,12 +17,7 @@
 				<category android:name="android.intent.category.LAUNCHER" />
 			</intent-filter>
 		</activity>
-		<activity android:name=".TraceActivity" android:theme="@style/AppThemeMenu">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+		<activity android:name=".TraceActivity" />
 		<activity android:name=".HomeActivity" />
 		<activity android:name=".QuestionActivity" />
 		<activity android:name=".AboutActivity"/>

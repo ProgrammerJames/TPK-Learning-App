@@ -72,11 +72,4 @@ public class TraceActivity extends AppCompatActivity {
 		getWindowManager().getDefaultDisplay().getMetrics(metrics);
 		paintView.init(metrics);
 	}
-
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		MenuInflater menuInflater = getMenuInflater();
-		menuInflater.inflate(R.menu.paint, menu);
-		return super.onCreateOptionsMenu(menu);
-	}
 }
