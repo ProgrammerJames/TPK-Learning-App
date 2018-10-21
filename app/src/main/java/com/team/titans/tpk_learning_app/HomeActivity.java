@@ -21,10 +21,13 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 
 	CardView vocabulary;
 	CardView game;
+	CardView draw;
+	CardView about;
+
 	CardView website;
 	CardView facebook;
 	CardView twitter;
-	CardView about;
+
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -79,14 +82,14 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
 		});
 
 		// Find the View that shows the company's website
-		website = (CardView) findViewById(R.id.CardView_website);
+		draw = (CardView) findViewById(R.id.CardView_draw);
 
 		// Set a click listener on that View
-		website.setOnClickListener(new View.OnClickListener() {
+		draw.setOnClickListener(new View.OnClickListener() {
 			// The code in this method will be executed when the colors category is clicked on.
 			@Override
 			public void onClick(View view) {
-				showWebPage(view);
+				showDrawPage();
 			}
 		});
 

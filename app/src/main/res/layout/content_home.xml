@@ -170,7 +170,7 @@
         </android.support.v7.widget.CardView>
 
         <android.support.v7.widget.CardView
-            android:id="@+id/CardView_website"
+            android:id="@+id/CardView_draw"
             android:layout_width="160dp"
             android:layout_height="190dp"
             android:layout_margin="10dp"
@@ -196,7 +196,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="@string/category_website"
+                    android:text="@string/category_drawing"
                     android:textColor="@color/cardview_dark_background"
                     android:textStyle="bold" />
 

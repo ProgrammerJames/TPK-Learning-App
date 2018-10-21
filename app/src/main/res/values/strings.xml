@@ -28,10 +28,16 @@
 	<!-- Category name for the website [CHAR LIMIT=20] -->
 	<string name="category_website">Website</string>
 
+	<!-- Category name for the facebook [CHAR LIMIT=20] -->
+	<string name="category_facebook">Facebook</string>
+
+	<!-- Category name for the twitter [CHAR LIMIT=20] -->
+	<string name="category_twitter">Twitter</string>
+
 	<!-- Category name for the game [CHAR LIMIT=20] -->
 	<string name="category_game">Game</string>
 
-	<string name="category_drawing">Free Draw</string>
+	<string name="category_drawing">Write Tamizh</string>
 
 	<!-- details for the game [CHAR LIMIT=20] -->
 	<string name="details_game">Word matching game</string>
@@ -41,6 +47,12 @@
 
 	<!-- details for the website [CHAR LIMIT=20] -->
 	<string name="details_website">Visit school website</string>
+
+	<!-- details for the facebook [CHAR LIMIT=20] -->
+	<string name="details_facebook">Visit school facebook page</string>
+
+	<!-- details for the twitter [CHAR LIMIT=20] -->
+	<string name="details_twitter">Visit school twitter page</string>
 
 	<!-- details for the vocabs [CHAR LIMIT=20] -->
 	<string name="details_vocabualry">Learn some Tamizh words</string>
@@ -91,6 +103,8 @@ Make learning the language interesting and fun. The use of specific applications
 	<!-- Score Splash Text -->
 	<string name="result">Result</string>
 	<string name="score">Score</string>
+
+	<!-- Drawing Text -->
 	<string name="clearScreen">Clear</string>
 	<string name="nextLetter">Next</string>
 	<string name="prevLetter">Previous</string>
