@@ -29,9 +29,6 @@ public class SplashActivity extends AppCompatActivity {
 		DatabaseSyncHelper db = new DatabaseSyncHelper(this);
 		db.updateDatabase(this);
 
-		//DatabaseHelper db = new DatabaseHelper(this);
-		//db.populateWords();
-
 		Handler handler = new Handler();
 		handler.postDelayed(new Runnable(){
 			@Override
